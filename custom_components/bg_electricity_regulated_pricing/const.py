@@ -5,7 +5,7 @@ DOMAIN = "bg_electricity_regulated_pricing"
 BGN_PER_KILOWATT_HOUR = f"BGN/{UnitOfEnergy.KILO_WATT_HOUR}"
 
 CONF_PROVIDER = "provider"
-PROVIDERS = ["electrohold", "ER_Yug(EVN)", "energo_pro", "custom"]
+PROVIDERS = ["electrohold", "ER_Yug", "energo_pro", "custom"]
 
 CONF_TARIFF_TYPE = "tariff_type"
 TARIFF_TYPES = ["dual", "single"]
@@ -26,7 +26,7 @@ PROVIDER_PRICES = {
         "fees": .01623 + .00754 + .04232
     },
     # Section 6.1, https://www.dker.bg/uploads/reshenia/2023/res_c_14_23.pdf
-    "ER_Yug(EVN)": {
+    "ER_Yug": {
         "day": .14667,
         "night": .05531,
         "fees": .01623 + .00803 + .04366
