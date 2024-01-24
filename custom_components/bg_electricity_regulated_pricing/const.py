@@ -5,7 +5,7 @@ DOMAIN = "bg_electricity_regulated_pricing"
 BGN_PER_KILOWATT_HOUR = f"BGN/{UnitOfEnergy.KILO_WATT_HOUR}"
 
 CONF_PROVIDER = "provider"
-PROVIDERS = ["electrohold", "ER_Yug", "energo_pro", "custom"]
+PROVIDERS = ["electrohold", "ER_Yug(EVN)", "energo_pro", "custom"]
 
 CONF_TARIFF_TYPE = "tariff_type"
 TARIFF_TYPES = ["dual", "single"]
