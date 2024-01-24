@@ -42,7 +42,7 @@ async def async_setup_entry(
     desc_price = SensorEntityDescription(
         key="price",
         translation_key="price",
-        icon="mdi:currency-eur",
+        icon="mdi:cash-multiple",
         native_unit_of_measurement=BGN_PER_KILOWATT_HOUR,
         state_class=SensorStateClass.MEASUREMENT,
         suggested_display_precision=6,
@@ -52,7 +52,7 @@ async def async_setup_entry(
     desc_tariff = SensorEntityDescription(
         key="tariff",
         translation_key="tariff",
-        icon="mdi:clock-time-ten",
+        icon="mdi:clock-time-four-outline",
         has_entity_name=True,
     )
 
