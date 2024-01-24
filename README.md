@@ -1,7 +1,7 @@
-[![](https://img.shields.io/github/release/avataar/bg_electricity_regulated_pricing_bg_tok/all.svg?style=for-the-badge)](https://github.com/avataar/bg_electricity_regulated_pricing_bg_tok/releases)
+[![](https://img.shields.io/github/release/vlado05/bg_electricity_regulated_pricing_bg_tok/all.svg?style=for-the-badge)](https://github.com/vlado05/bg_electricity_regulated_pricing_bg_tok/releases)
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge)](https://github.com/hacs/integration)
-[![](https://img.shields.io/github/license/avataar/bg_electricity_regulated_pricing?style=for-the-badge)](LICENSE.txt)
-[![](https://img.shields.io/github/workflow/status/avataar/bg_electricity_regulated_pricing_bg_tok/Python%20package?style=for-the-badge)](https://github.com/avataar/bg_electricity_regulated_pricing_bg_tok/actions)
+[![](https://img.shields.io/github/license/vlado05/bg_electricity_regulated_pricing?style=for-the-badge)](LICENSE.txt)
+[![](https://img.shields.io/github/workflow/status/vlado05/bg_electricity_regulated_pricing_bg_tok/Python%20package?style=for-the-badge)](https://github.com/vlado05/bg_electricity_regulated_pricing_bg_tok/actions)
 
 # Bulgarian Electricity Regulated Pricing for Home Assistant
 
