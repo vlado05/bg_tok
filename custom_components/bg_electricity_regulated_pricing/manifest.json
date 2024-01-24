@@ -1,5 +1,5 @@
 {
-  "domain": "bg_electricity_regulated_pricing",
+  "domain": "bg_electricity_regulated_pricing_bg_tok",
   "name": "Bulgarian Electricity Regulated Pricing",
   "codeowners": ["@avataar"],
   "config_flow": true,
