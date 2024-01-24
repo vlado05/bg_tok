@@ -26,7 +26,7 @@ PROVIDER_PRICES = {
         "fees": .01623 + .00754 + .04232
     },
     # Section 6.1, https://www.dker.bg/uploads/reshenia/2023/res_c_14_23.pdf
-    "evn": {
+    "ЕР Юг(EVN)": {
         "day": .14667,
         "night": .05531,
         "fees": .01623 + .00803 + .04366
