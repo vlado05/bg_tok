@@ -3,8 +3,7 @@
 [![](https://img.shields.io/github/license/vlado05/bg_electricity_regulated_pricing_bg_tok?style=for-the-badge)](LICENSE.txt)
 [![](https://img.shields.io/github/workflow/status/vlado05/bg_electricity_regulated_pricing_bg_tok/Python%20package?style=for-the-badge)](https://github.com/vlado05/bg_electricity_regulated_pricing_bg_tok/actions)
 
-# Bulgarian Electricity Regulated Pricing for Home Assistant 
-
+# Регулирани цени на електроенергия в България за Home Assistant
 Custom integration for [Home Assistant](https://www.home-assistant.io) that provides the price of electricity on the regulated market for domestic customers, and the applicable tariff, (day or night).
 
 All three major regional providers, Electrohold, EVN, and ENERGO-PRO are supported.
