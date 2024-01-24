@@ -40,7 +40,7 @@
         "provider": {
             "options": {
                 "electrohold": "Електрохолд",
-                "evn": "EVN",
+                "evn": "ЕР Юг(EVN)",
                 "energo_pro": "ЕНЕРГО-ПРО",
                 "custom": "Потребителска цена"
             }
