@@ -5,7 +5,7 @@
 
 # Bulgarian Electricity Regulated Pricing for Home Assistant
 
-Custom integration for [Home Assistant](https://www.home-assistant.io) that provides the price of electricity on the regulated market for domestic customers, and the applicable tariff (day or night).
+Custom integration for [Home Assistant](https://www.home-assistant.io) that provides the price of electricity on the regulated market for domestic customers, and the applicable tariff, (day or night).
 
 All three major regional providers, Electrohold, EVN, and ENERGO-PRO are supported.
 
