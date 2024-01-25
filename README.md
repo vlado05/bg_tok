@@ -32,34 +32,3 @@ This sensor provides the current tariff. It can be used to run power-hungry devi
 <img src="https://github.com/vlado05/bg_electricity_regulated_pricing_bg_tok/raw/main/images/tariff.png" width="50%" height="auto">
 
 ## Install
-
-You can install the integration as a [custom HACS repository](https://hacs.xyz/docs/faq/custom_repositories/) using the GitHub URL of this project: https://github.com/avataar/bg_electricity_regulated_pricing. 
-
-You can also install the integration by copying the [custom_components/bg_electricity_regulated_pricing](custom_components/bg_electricity_regulated_pricing) folder to your Home Assistant's `custom_components` folder just like with any other manually installed custom integration.
-
-In the future, the integration may be added to HACS's default repositories.
-
-## Configuration
-
-From the sidebar in Home Assistant, select [Settings > Devices & Services](https://my.home-assistant.io/redirect/integrations). Search for the integration by name (Bulgarian Electricity Regulated Pricing / Цени на електроенергията на регулирания пазар в България). To configure it for most users, it will suffice to enter a name, choose the provider, and leave the rest of the options with their default values. The name will be used to derive the sensor IDs.
-
-<p>
-  <img src="https://github.com/vlado05/bg_electricity_regulated_pricing_bg_tok/raw/main/images/configure-bg.png" width="45%" height="auto">
-  <img src="https://github.com/vlado05/bg_electricity_regulated_pricing_bg_tok/raw/main/images/configure-en.png" width="45%" height="auto">
-</p>
-
-If you have multiple meters to track, you can configure as many instances of the integration as needed.
-
-### Advanced options
-
-#### Custom provider
-
-If the price you pay for your electricity is different from the three regional providers (but you still have a dual/single tariff like anyone else) you can configure custom prices. Choose `Custom` / `Потребителска цена` for the provider and enter the day/night price in the corresponding options below.
-
-#### Incorrect meter clock
-
-Meter clocks are notoriously never correct. You can adjust the time used for switching to the day/night tariff using the `Clock offset` / `Избързване/изоставане на часовника` option. This is the offset of the meter clock from real time. For example, if your meter clock is 30 minutes ahead set it to 30; if it's 15 minutes behind set it to -15.
-
-#### Dual vs single tariff billing
-
-Most users get billed at the dual tariff that switches between day and night prices. If for some reason you have a single tariff you can choose that in the `Tariff Type` / `Тарифност` option. When a single tariff is configured, the day price will be used at all times and the tariff sensor will always report the tariff as `day`.
