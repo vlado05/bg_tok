@@ -4,5 +4,5 @@
 [![](https://img.shields.io/github/workflow/status/vlado05/bg_electricity_regulated_pricing_bg_tok/Python%20package?style=for-the-badge)](https://github.com/vlado05/bg_electricity_regulated_pricing_bg_tok/actions)
 
 # БГ електроенергия - цена/тарифа
-Custom integration for [Home Assistant](https://www.home-assistant.io) that provides the price of electricity on the regulated market for domestic customers, and the applicable tariff, (day or night).
+Персонализирана интеграция за Home Assistant, която осигурява цената на електрическата енергия на регулирания пазар за битови клиенти, както и приложимата тарифа (дневна/нощна).
 
