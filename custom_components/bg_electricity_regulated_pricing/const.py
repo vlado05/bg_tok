@@ -1,7 +1,7 @@
 """Constants for the bg_electricity_regulated_pricing integration."""
 from homeassistant.const import UnitOfEnergy
 
-DOMAIN = "bg_electricity_regulated_pricing"
+DOMAIN = "bg_electricity_regulated_pricing_bg_tok"
 BGN_PER_KILOWATT_HOUR = f"BGN/{UnitOfEnergy.KILO_WATT_HOUR}"
 
 CONF_PROVIDER = "provider"
