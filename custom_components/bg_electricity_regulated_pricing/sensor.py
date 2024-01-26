@@ -33,7 +33,7 @@ async def async_setup_entry(
     else:
         price_day = (PROVIDER_PRICES[provider]["дневна"]
                      + PROVIDER_PRICES[provider]["fees"]) * (1 + VAT_RATE)
-        price_night = (PROVIDER_PRICES[provider]["night"]
+        price_night = (PROVIDER_PRICES[provider]["нощна"]
                        + PROVIDER_PRICES[provider]["fees"]) * (1 + VAT_RATE)
 
     price_provider = BgElectricityRegulatedPricingProvider(tariff_type, clock_offset,
@@ -136,7 +136,7 @@ class BgElectricityRegulatedPricingProvider:
                        ) % 1440
         if self._tariff_type == "dual":
             if hour_minutes >= 22 * 60 or hour_minutes < 6 * 60:
-                return "night"
+                return "нощна"
         return "дневна"
 
     def price(self):
