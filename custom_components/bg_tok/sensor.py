@@ -1,4 +1,4 @@
-"""Sensor platform for bg_electricity_regulated_pricing integration."""
+"""Sensor platform for bg_tok."""
 from __future__ import annotations
 
 from homeassistant.components.sensor import SensorEntity, SensorEntityDescription, \
@@ -20,7 +20,7 @@ async def async_setup_entry(
         config_entry: ConfigEntry,
         async_add_entities: AddEntitiesCallback,
 ) -> None:
-    """Initialize bg_electricity_regulated_pricing config entry."""
+    """Initialize bg_tok config entry."""
     name = config_entry.title
     unique_id = config_entry.entry_id
 
@@ -36,7 +36,7 @@ async def async_setup_entry(
         price_night = (PROVIDER_PRICES[provider]["нощна"]
                        + PROVIDER_PRICES[provider]["fees"]) * (1 + VAT_RATE)
 
-    price_provider = BgElectricityRegulatedPricingProvider(tariff_type, clock_offset,
+    price_provider = bg_tokProvider(tariff_type, clock_offset,
                                                            price_day, price_night)
 
     desc_price = SensorEntityDescription(
@@ -57,9 +57,9 @@ async def async_setup_entry(
     )
 
     async_add_entities([
-        BgElectricityRegulatedPricingPriceSensorEntity(price_provider, unique_id,
+        bg_tokPriceSensorEntity(price_provider, unique_id,
                                                        name, desc_price),
-        BgElectricityRegulatedPricingTariffSensorEntity(price_provider, unique_id,
+        bg_tokTariffSensorEntity(price_provider, unique_id,
                                                         name, desc_tariff)
     ])
 
@@ -68,10 +68,10 @@ def now_utc():
     return utcnow()
 
 
-class BgElectricityRegulatedPricingSensorEntity(SensorEntity):
-    """BgElectricityRegulatedPricing Sensor base."""
+class bg_tokSensorEntity(SensorEntity):
+    """bg_tok Sensor base."""
 
-    def __init__(self, price_provider: BgElectricityRegulatedPricingProvider,
+    def __init__(self, price_provider: bg_tokProvider,
                  unique_id: str, name: str,
                  description: SensorEntityDescription) -> None:
         super().__init__()
@@ -86,12 +86,12 @@ class BgElectricityRegulatedPricingSensorEntity(SensorEntity):
         )
 
 
-class BgElectricityRegulatedPricingPriceSensorEntity(
-    BgElectricityRegulatedPricingSensorEntity
+class bg_tokPriceSensorEntity(
+    bg_tokSensorEntity
 ):
-    """BgElectricityRegulatedPricing Sensor for price."""
+    """bg_tok Sensor for price."""
 
-    def __init__(self, price_provider: BgElectricityRegulatedPricingProvider,
+    def __init__(self, price_provider: bg_tokProvider,
                  unique_id: str, name: str,
                  description: SensorEntityDescription) -> None:
         super().__init__(price_provider, unique_id, name, description)
@@ -101,12 +101,12 @@ class BgElectricityRegulatedPricingPriceSensorEntity(
         self._attr_native_value = self._price_provider.price()
 
 
-class BgElectricityRegulatedPricingTariffSensorEntity(
-    BgElectricityRegulatedPricingSensorEntity
+class bg_tokTariffSensorEntity(
+    bg_tokSensorEntity
 ):
-    """BgElectricityRegulatedPricing Sensor for tariff."""
+    """bg_tok Sensor for tariff."""
 
-    def __init__(self, price_provider: BgElectricityRegulatedPricingProvider,
+    def __init__(self, price_provider: bg_tokProvider,
                  unique_id: str, name: str,
                  description: SensorEntityDescription) -> None:
         super().__init__(price_provider, unique_id, name, description)
@@ -116,7 +116,7 @@ class BgElectricityRegulatedPricingTariffSensorEntity(
         self._attr_native_value = self._price_provider.tariff()
 
 
-class BgElectricityRegulatedPricingProvider:
+class bg_tokProvider:
     """Pricing provider aware of current tariff and price."""
 
     def __init__(self, tariff_type, clock_offset, price_day, price_night):

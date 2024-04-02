@@ -1,10 +1,10 @@
 {
-  "domain": "bg_electricity_regulated_pricing_bg_tok",
+  "domain": "bg_tok",
   "name": "BG TOK",
   "codeowners": ["@vlado05"],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/vlado05/bg_electricity_regulated_pricing_bg_tok",
+  "documentation": "https://github.com/vlado05/bg_tok",
   "homekit": {},
   "integration_type": "hub",
   "iot_class": "calculated",
