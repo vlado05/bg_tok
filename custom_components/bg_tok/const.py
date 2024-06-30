@@ -21,9 +21,9 @@ VAT_RATE = 0.2
 PROVIDER_PRICES = {
     # Section 6.1, https://www.dker.bg/uploads/reshenia/2024/res-c-17-2024.pdf
     "electrohold": {
-        "дневна": .14875,
-        "нощна": .05997,
-        "fees": .01623 + .00754 + .04232
+        "дневна": .16210,
+        "нощна": .07104,
+        "fees": .01354 + .00770 + .03803
     },
     # Section 6.1, https://www.dker.bg/uploads/reshenia/2024/res-c-17-2024.pdf
     "evn": {
