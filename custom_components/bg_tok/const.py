@@ -19,13 +19,13 @@ CONF_CUSTOM_NIGHT_PRICE = "custom_night_price"
 VAT_RATE = 0.2
 
 PROVIDER_PRICES = {
-    # Section 6.1, https://www.dker.bg/uploads/reshenia/2023/res_c_14_23.pdf
+    # Section 6.1, https://www.dker.bg/uploads/reshenia/2024/res-c-17-2024.pdf
     "electrohold": {
         "дневна": .14875,
         "нощна": .05997,
         "fees": .01623 + .00754 + .04232
     },
-    # Section 6.1, https://www.dker.bg/uploads/reshenia/2023/res_c_14_23.pdf
+    # Section 6.1, https://www.dker.bg/uploads/reshenia/2024/res-c-17-2024.pdf
     "evn": {
         "дневна": .14667,
         "нощна": .05531,
