@@ -23,7 +23,7 @@ PROVIDER_PRICES = {
     "electrohold": {
         "дневна": .16210,
         "нощна": .07104,
-        "fees": .01354 + .00770 + .03803
+        "fees": .01354 + .00770 + .04203
     },
     # Section 6.1, https://www.dker.bg/uploads/reshenia/2024/res-c-17-2024.pdf
     "evn": {
