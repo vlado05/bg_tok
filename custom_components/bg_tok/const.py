@@ -33,8 +33,8 @@ PROVIDER_PRICES = {
     },
     # Section 6.3, https://www.dker.bg/uploads/reshenia/2025/res_c-03_25.pdf
     "energo_pro": {
-        "дневна": .17706,
-        "нощна": .07192,
-        "fees": .01354 + .00977 + .04135
+        "дневна": .24269,
+        "нощна": .013755,
+        "fees": .0 + .0 + .0
     }
 }
