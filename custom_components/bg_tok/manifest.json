@@ -10,6 +10,6 @@
   "iot_class": "calculated",
   "requirements": [],
   "ssdp": [],
-  "version": "25.1.7",
+  "version": "25.1.7a",
   "zeroconf": []
 }
