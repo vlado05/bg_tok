@@ -28,7 +28,7 @@ PROVIDER_PRICES = {
     # Section 6.1, https://www.dker.bg/uploads/reshenia/2025/res_c-03_25.pdf
     "evn": {
         "дневна": .23633,
-        "нощна": .1378,
+        "нощна": .13780,
         "fees": .0 + .0 + .0
     },
     # Section 6.3, https://www.dker.bg/uploads/reshenia/2025/res_c-03_25.pdf
