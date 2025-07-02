@@ -6,7 +6,7 @@
 # БГ електроенергия - цена/тарифа
 Персонализирана интеграция за Home Assistant, която осигурява цената на електрическата енергия на регулирания пазар за битови клиенти, както и приложимата тарифа (дневна/нощна).
 
-Цените се определят статично. Източник за текущите цени са официалните уебсайтове на дружествата [ЕЛЕКТРОХОЛД](https://electrohold.bg/bg/sales/domakinstva/snabdyavane-po-regulirani-ceni/) , [ЕНЕРГО-ПРО](https://energo-pro-sales.bg/bg/za-klienta/klienti-na-reguliran-pazar/ceni-na-elektroenergijata/ceni-na-elektroenergijata-za-bitovi-klienti-ot-01-01-2025-g) ,както и раздел 6 от [РЕШЕНИЕ № Ц-17 от 30.06.2024 г. НА КОМИСИЯТА ЗА ЕНЕРГИЙНО И ВОДНО РЕГУЛИРАНЕ](https://www.dker.bg/uploads/reshenia/2024/res-c-17-2024.pdf) и [РЕШЕНИЕ № Ц-3 от 01.01.2025 г. НА КОМИСИЯТА ЗА ЕНЕРГИЙНО И ВОДНО РЕГУЛИРАНЕ](https://www.dker.bg/uploads/reshenia/2025/res_c-03_25.pdf). Всички цени са крайната сума, която ще платите, с включен ДДС.
+Цените се определят статично. Източник за текущите цени са официалните уебсайтове на дружествата [ЕЛЕКТРОХОЛД](https://electrohold.bg/bg/sales/domakinstva/snabdyavane-po-regulirani-ceni/) , [ЕНЕРГО-ПРО](https://energo-pro-sales.bg/bg/za-klienta/klienti-na-reguliran-pazar/ceni-na-elektroenergijata/ceni-na-elektroenergijata-za-bitovi-klienti-ot-01-01-2025-g) Всички цени са крайната сума, която ще платите, с включен ДДС.
 
 Нощната тарифа започва в 22:00 UTC+2 и приключва в 06:00 UTC+2. Имайте предвид, че въпреки че България преминава към UTC+3 през лятото, часовниците на измервателните уреди не се коригират. С други думи, нощната тарифа започва в 22:00 ч./приключва в 06:00 ч. през зимата и в 23:00 ч./07:00 ч. през лятото.
 
