@@ -12,7 +12,7 @@ from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
 
 from .const import CONF_TARIFF_TYPE, CONF_PROVIDER, CONF_CUSTOM_DAY_PRICE, \
     CONF_CUSTOM_NIGHT_PRICE, PROVIDER_PRICES, CONF_CLOCK_OFFSET, \
-    BGN_PER_KILOWATT_HOUR, VAT_RATE, DOMAIN
+    EUR_PER_KILOWATT_HOUR, VAT_RATE, DOMAIN
 
 
 async def async_setup_entry(
@@ -43,7 +43,7 @@ async def async_setup_entry(
         key="price",
         translation_key="price",
         icon="mdi:cash-multiple",
-        native_unit_of_measurement=BGN_PER_KILOWATT_HOUR,
+        native_unit_of_measurement=EUR_PER_KILOWATT_HOUR,
         state_class=SensorStateClass.MEASUREMENT,
         suggested_display_precision=6,
         has_entity_name=True,
