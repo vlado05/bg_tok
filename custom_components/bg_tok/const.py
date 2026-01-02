@@ -2,7 +2,7 @@
 from homeassistant.const import UnitOfEnergy
 
 DOMAIN = "bg_tok"
-BGN_PER_KILOWATT_HOUR = f"EUR/{UnitOfEnergy.KILO_WATT_HOUR}"
+EUR_PER_KILOWATT_HOUR = f"EUR/{UnitOfEnergy.KILO_WATT_HOUR}"
 
 CONF_PROVIDER = "provider"
 PROVIDERS = ["electrohold", "evn", "energo_pro", "custom"]
