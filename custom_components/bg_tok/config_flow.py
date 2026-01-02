@@ -15,7 +15,7 @@ from homeassistant.helpers.schema_config_entry_flow import (
 
 from .const import DOMAIN, PROVIDERS, CONF_PROVIDER, CONF_TARIFF_TYPE, TARIFF_TYPES, \
     CONF_CLOCK_OFFSET, CONF_CUSTOM_DAY_PRICE, CONF_CUSTOM_NIGHT_PRICE, \
-    BGN_PER_KILOWATT_HOUR
+    EUR_PER_KILOWATT_HOUR
 
 OPTIONS_SCHEMA = vol.Schema(
     {
