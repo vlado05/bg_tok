@@ -40,13 +40,13 @@ OPTIONS_SCHEMA = vol.Schema(
         vol.Required(CONF_CUSTOM_DAY_PRICE, default=0): selector.NumberSelector(
             selector.NumberSelectorConfig(
                 step="any", mode=selector.NumberSelectorMode.BOX,
-                unit_of_measurement=BGN_PER_KILOWATT_HOUR
+                unit_of_measurement=EUR_PER_KILOWATT_HOUR
             ),
         ),
         vol.Required(CONF_CUSTOM_NIGHT_PRICE, default=0): selector.NumberSelector(
             selector.NumberSelectorConfig(
                 step="any", mode=selector.NumberSelectorMode.BOX,
-                unit_of_measurement=BGN_PER_KILOWATT_HOUR
+                unit_of_measurement=EUR_PER_KILOWATT_HOUR
             ),
         )
     }
