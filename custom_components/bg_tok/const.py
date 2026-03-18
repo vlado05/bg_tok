@@ -13,28 +13,29 @@ TARIFF_TYPES = ["dual", "single"]
 CONF_CLOCK_OFFSET = "clock_offset"
 
 CONF_CUSTOM_DAY_PRICE = "custom_day_price"
-
 CONF_CUSTOM_NIGHT_PRICE = "custom_night_price"
 
-VAT_RATE = 0.2
+# VAT_RATE оставяме за справка, но няма да се използва при изчисления
+VAT_RATE = 0.2  
 
+# Цени директно с ДДС (€/kWh)
 PROVIDER_PRICES = {
-    # Section 6.1, https://www.dker.bg/uploads/reshenia/2025/res_c-03_25.pdf
     "electrohold": {
-        "дневна": .12478,
-        "нощна": .07381,
-        "fees": .0 + .0 + .0
+        "дневна": 0.14973,  # с ДДС
+        "нощна": 0.08857,   # с ДДС
+        "fees": 0.0
     },
-    # Section 6.1, https://www.dker.bg/uploads/reshenia/2025/res_c-03_25.pdf
     "evn": {
-        "дневна": .12488,
-        "нощна": .07392,
-        "fees": .0 + .0 + .0
+        "дневна": 0.14986,  # с ДДС
+        "нощна": 0.08870,   # с ДДС
+        "fees": 0.0
     },
-    # Section 6.3, https://www.dker.bg/uploads/reshenia/2025/res_c-03_25.pdf
     "energo_pro": {
-        "дневна": .12615,
-        "нощна": .07519,
+        "дневна": 0.15838,  # с ДДС
+        "нощна": 0.09478,   # с ДДС
+        "fees": 0.0
+    }
+}        "нощна": .07519,
         "fees": .0 + .0 + .0
     }
 }
