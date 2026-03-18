@@ -1,23 +1,18 @@
 """Sensor platform for bg_tok."""
 from __future__ import annotations
 
-from homeassistant.components.sensor import SensorEntity, SensorEntityDescription, SensorStateClass
+from homeassistant.components.sensor import SensorEntity, SensorEntityDescription, \
+    SensorStateClass
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.util import utcnow
 from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
 
-from .const import (
-    CONF_TARIFF_TYPE,
-    CONF_PROVIDER,
-    CONF_CUSTOM_DAY_PRICE,
-    CONF_CUSTOM_NIGHT_PRICE,
-    PROVIDER_PRICES,
-    CONF_CLOCK_OFFSET,
-    EUR_PER_KILOWATT_HOUR,
-    DOMAIN,
-)
+
+from .const import CONF_TARIFF_TYPE, CONF_PROVIDER, CONF_CUSTOM_DAY_PRICE, \
+    CONF_CUSTOM_NIGHT_PRICE, PROVIDER_PRICES, CONF_CLOCK_OFFSET, \
+    EUR_PER_KILOWATT_HOUR, VAT_RATE, DOMAIN
 
 
 async def async_setup_entry(
@@ -32,113 +27,14 @@ async def async_setup_entry(
     tariff_type = config_entry.options[CONF_TARIFF_TYPE]
     clock_offset = config_entry.options[CONF_CLOCK_OFFSET]
     provider = config_entry.options[CONF_PROVIDER]
-
     if provider == "custom":
         price_day = config_entry.options[CONF_CUSTOM_DAY_PRICE]
         price_night = config_entry.options[CONF_CUSTOM_NIGHT_PRICE]
     else:
-        # Използваме цените директно, с ДДС
-        price_day = PROVIDER_PRICES[provider]["дневна"] + PROVIDER_PRICES[provider]["fees"]
-        price_night = PROVIDER_PRICES[provider]["нощна"] + PROVIDER_PRICES[provider]["fees"]
-
-    price_provider = bg_tokProvider(tariff_type, clock_offset, price_day, price_night)
-
-    desc_price = SensorEntityDescription(
-        key="price",
-        translation_key="price",
-        icon="mdi:cash-multiple",
-        native_unit_of_measurement=EUR_PER_KILOWATT_HOUR,
-        state_class=SensorStateClass.MEASUREMENT,
-        suggested_display_precision=6,
-        has_entity_name=True,
-    )
-
-    desc_tariff = SensorEntityDescription(
-        key="tariff",
-        translation_key="tariff",
-        icon="mdi:clock-time-four-outline",
-        has_entity_name=True,
-    )
-
-    async_add_entities([
-        bg_tokPriceSensorEntity(price_provider, unique_id, name, desc_price),
-        bg_tokTariffSensorEntity(price_provider, unique_id, name, desc_tariff)
-    ])
-
-
-def now_utc():
-    return utcnow()
-
-
-class bg_tokSensorEntity(SensorEntity):
-    """bg_tok Sensor base."""
-
-    def __init__(self, price_provider: bg_tokProvider, unique_id: str, name: str,
-                 description: SensorEntityDescription) -> None:
-        super().__init__()
-        self.entity_description = description
-        self._attr_unique_id = unique_id + "_" + description.key
-        self._price_provider = price_provider
-        self._device_name = name
-        self._attr_device_info = DeviceInfo(
-            name=name,
-            identifiers={(DOMAIN, unique_id)},
-            entry_type=DeviceEntryType.SERVICE,
-        )
-
-
-class bg_tokPriceSensorEntity(bg_tokSensorEntity):
-    """bg_tok Sensor for price."""
-
-    def __init__(self, price_provider: bg_tokProvider, unique_id: str, name: str,
-                 description: SensorEntityDescription) -> None:
-        super().__init__(price_provider, unique_id, name, description)
-        self.update()
-
-    def update(self) -> None:
-        self._attr_native_value = self._price_provider.price()
-
-
-class bg_tokTariffSensorEntity(bg_tokSensorEntity):
-    """bg_tok Sensor for tariff."""
-
-    def __init__(self, price_provider: bg_tokProvider, unique_id: str, name: str,
-                 description: SensorEntityDescription) -> None:
-        super().__init__(price_provider, unique_id, name, description)
-        self.update()
-
-    def update(self):
-        self._attr_native_value = self._price_provider.tariff()
-
-
-class bg_tokProvider:
-    """Pricing provider aware of current tariff and price."""
-
-    def __init__(self, tariff_type, clock_offset, price_day, price_night):
-        self._tariff_type = tariff_type
-        self._clock_offset = clock_offset
-        self._price_day = price_day
-        self._price_night = price_night
-
-    def tariff(self):
-        # Current hour and minutes in minutes since midnight, UTC+2.
-        # Night tariff starts at 22:00 and ends at 06:00 UTC+2 (no summer time)
-        utc = now_utc()
-        hour_minutes = (
-            (utc.hour + 2) % 24 * 60
-            + utc.minute
-            + self._clock_offset
-        ) % 1440
-        if self._tariff_type == "dual":
-            if hour_minutes >= 22 * 60 or hour_minutes < 6 * 60:
-                return "нощна"
-        return "дневна"
-
-    def price(self):
-        if self.tariff() == "дневна":
-            return self._price_day
-        else:
-            return self._price_night                       + PROVIDER_PRICES[provider]["fees"]) * (1 + VAT_RATE)
+        price_day = (PROVIDER_PRICES[provider]["дневна"]
+                     + PROVIDER_PRICES[provider]["fees"]) * (1 + VAT_RATE)
+        price_night = (PROVIDER_PRICES[provider]["нощна"]
+                       + PROVIDER_PRICES[provider]["fees"]) * (1 + VAT_RATE)
 
     price_provider = bg_tokProvider(tariff_type, clock_offset,
                                                            price_day, price_night)
